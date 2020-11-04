@@ -7,7 +7,7 @@ Kelompok 4 Webdev
 4. Icha Cahya Wulan
 5. Nadhilah Nurfajrina
 6. Riyanzani Anggara
-7. Zefan Gracio
+7. Zefan Gracio A
 
 
 Project Pengembangan Website News dengan topik travel, menggunakan Node.js, dan PostgreSQL.
