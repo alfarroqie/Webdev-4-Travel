@@ -5,9 +5,9 @@ const Op = db.Sequelize.Op;
 // Create and Save a new News
 exports.create = (req, res) => {
     // Validate request
-  if (!req.body.userPostId) {
+  if (!req.body.content) {
     res.status(400).send({
-      message: "userPostId cannot be empty!"
+      message: "Content cannot be empty!"
     });
     return;
   }
@@ -20,7 +20,7 @@ exports.create = (req, res) => {
     locationLink: req.body.locationLink, 
     views: 0,
     pictLink: req.body.pictLink,
-    userPostId: req.body.userPostId
+    userId: req.body.userId
   };
 
   // Save nNews in the database

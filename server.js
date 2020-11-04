@@ -27,6 +27,9 @@ app.get("/", (req, res) => {
 
 // require routes for API Weathers
 require("./app/routes/weathers.routes")(app);
+require("./app/routes/news.routes")(app);
+require("./app/routes/categorys.routes")(app);
+require("./app/routes/users.routes")(app);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8082;
