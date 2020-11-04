@@ -6,7 +6,7 @@ Kelompok 4 Webdev
 3. Fajrina Aflaha
 4. Icha Cahya Wulan
 5. Nadhilah Nurfajrina
-6. Riyanzani Anggara
+6. Riyanzani Anggara P
 7. Zefan Gracio A
 
 
