@@ -9,6 +9,7 @@ exports.create = (req, res) => {
     res.status(400).send({
       message: "userPostId cannot be empty!"
     });
+    console.log("AAAAAAA");
     return;
   }
 
