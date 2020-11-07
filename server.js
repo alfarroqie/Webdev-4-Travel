@@ -25,7 +25,7 @@ app.get("/", (req, res) => {
   res.json({ message: "Welcome to News Travel App" });
 });
 
-// require routes for API Weathers
+// require routes for API
 require("./app/routes/weathers.routes")(app);
 require("./app/routes/news.routes")(app);
 require("./app/routes/categorys.routes")(app);
