@@ -1,6 +1,5 @@
 const db = require("../models");
 const Categorys = db.categorys;
-const NewsCategory = db.newsCategory;
 const News = db.news;
 const Op = db.Sequelize.Op;
 
@@ -129,50 +128,88 @@ exports.findAll = (req, res) => {
     });
 };
 
-
+// Adding News Category
 // exports.addNewsCategory = (req, res) => {
+//     // Validate request
 //   if (!req.body.newsId || !req.body.categorysId) {
 //     res.status(400).send({
-//       message: "newsId and categorysId cannot empty!"
+//       message: "newsId dan categorysId cannot be empty!"
 //     });
 //     return;
 //   }
+
 //   return Categorys.findByPk(req.body.categorysId)
-//     .then((categorys) => {
-//       if (!categorys) {
-//         console.log("Category not found");
+//     .then((category) => {
+//       if (!category) {
+//         console.log("category not found!");
 //         return null;
 //       }
-//       return News.findByPk(req.body.newsId).then((news) => {
+//       return News.findByPk(req.body.newsId)
+//       .then((news) => {
 //         if (!news) {
 //           console.log("News not found!");
 //           return null;
 //         }
 
-// exports.addNewsCategory = (req, res) => {
-//   // Validate request
-// if (!req.body.newsId || !req.body.categorysId) {
-//   res.status(400).send({
-//     message: "newsId dan categorysId cannot be empty!"
-//   });
-//   return;
-// }
-
-// // Create a Categorys
-// const newscategory = {
-//   news_id: req.body.newsId,
-//   category_id: req.body.isLocation
-// };
-
-// // Save Categorys in the database
-// Categorys.create(categorys)
-//   .then(data => {
-//     res.send(data);
-//   })
-//   .catch(err => {
-//     res.status(500).send({
-//       message:
-//         err.message || "Some error occurred while creating the Categorys."
+//         // await Categorys.addNewsCategory(req.body.categorysId, tut3.id);
+//         category.addNewsCategory(news);
+//         console.log(`>> added news id=${news.id} to category id=${category.id}`);
+//         return category;
+//       });
+//     })
+//     .catch((err) => {
+//       console.log(">> Error while adding news category: ", err);
 //     });
-//   });
-// };
+//   };
+  
+  // exports.addNewsCategory = (req, res) => {
+  //   // Validate request
+  // if (!req.body.newsId || !req.body.categorysId) {
+  //   res.status(400).send({
+  //     message: "newsId dan categorysId cannot be empty!"
+  //   });
+  //   return;
+  // }
+  
+  // // Create a Categorys
+  // const newscategory = {
+  //   news_id: req.body.newsId,
+  //   category_id: req.body.isLocation
+  // };
+  
+  // // Save Categorys in the database
+  // Categorys.create(categorys)
+  //   .then(data => {
+  //     res.send(data);
+  //   })
+  //   .catch(err => {
+  //     res.status(500).send({
+  //       message:
+  //         err.message || "Some error occurred while creating the Categorys."
+  //     });
+  //   });
+  // };
+
+exports.addNewsCategory = (categorysId, newsId) => {
+  return Categorys.findByPk(categorysId)
+    .then((category) => {
+      if (!category) {
+        console.log("category not found!");
+        return null;
+      }
+      return News.findByPk(newsId).then((news) => {
+        if (!news) {
+          console.log("News not found!");
+          return null;
+        }
+
+        category.addNewsCategory(news);
+        console.log(`>> added news id=${news.id} to category id=${category.id}`);
+        return category;
+      });
+    })
+    .catch((err) => {
+      console.log(">> Error while adding news category: ", err);
+    });
+};
+

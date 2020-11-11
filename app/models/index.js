@@ -19,6 +19,7 @@ const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
+
 db.news = require("./news.model.js")(sequelize, Sequelize);
 db.categorys = require("./categorys.model.js")(sequelize, Sequelize);
 db.gallerys = require("./gallerys.model.js")(sequelize, Sequelize);

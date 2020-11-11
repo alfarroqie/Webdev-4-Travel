@@ -20,7 +20,12 @@ module.exports = app => {
     router.delete("/:id", categorys.delete);
 
     // Create news category
-    router.post("/newsCategory", categorys.addNewsCategory);
+    // router.post("/newsCategory", categorys.addNewsCategory);
+
+    router.post ('/newsCategory', async (req, res)=>{
+      await categorys.addNewsCategory(req.body.categorysId,req.body.newsId);
+      res.status(200).send();
+  })
   
     app.use('/api/categorys', router);
   };
