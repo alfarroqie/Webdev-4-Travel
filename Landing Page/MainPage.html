@@ -1,48 +1,53 @@
 <!DOCTYPE html>
-    <html id="home" lang="en">
-        <head>
-            <!-- Required meta tags -->
-            <meta charset="utf-8">
-            <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"><!-- Bootstrap CSS -->
-            <link href="css/bootstrap.min.css" rel="stylesheet"><!-- My Css -->
-            <link href="css/style.css" rel="stylesheet"> 
-            <script src="js/bootstrap.js"></script>
-            <title>Voyagee</title>
-        </head>
-    <body>
-   
- <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #abcabd;">
-  <div class="container">
-   <a class="navbar-brand" href="#home">Voyagee</a> <button aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarNavDropdown" data-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button>
-   <div class="collapse navbar-collapse" id="navbarNavDropdown">
-    <ul class="navbar-nav justify-content-center">
-     <li class="nav-item">
-      <a class="nav-link page-scroll" href="#terbaru">Terbaru</a>
-     </li>
-     <li class="nav-item">
-      <a class="nav-link page-scroll" href="#terpopuler">Terpopuler</a>
-     </li>
-     <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#kategori" id="navbarDropdown" role="button" data-toggle="kategori" aria-haspopup="true" aria-expanded="false">
-        Kategori
-      </a>
-     </li>
-     <li class="nav-item">
-      <a class="nav-link page-scroll" href="#galeri">Galeri</a>
-     </li>
-    </ul>
-   </div>
-  </div>
- </nav><!-- Akhir Navbar -->
+  <html id="home" lang="en">
+    <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"><!-- Bootstrap CSS -->
+      <!-- <link href="css/bootstrap.min.css" rel="stylesheet">My Css
+      <link href="css/style.css" rel="stylesheet"> -->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <!-- <script src="js/bootstrap.js"></script> -->
+      <script src="https://kit.fontawesome.com/b019bbbe39.js" crossorigin="anonymous"></script>
+      
+      <title>Voyagee</title>
+    </head>
 
-    <div id="slide" class="carousel slide" data-ride="carousel">
-      <ul class="carousel-indicators">
-        <li data-target="#slide" data-slide-to="0" class="active"></li>
-        <li data-target="#slide" data-slide-to="1"></li>
-        <li data-target="#slide" data-slide-to="2"></li>
-      </ul>
-      <div class="carousel-inner">
-        <div class="carousel-item active">
+    <body>
+      <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #abcabd;">
+        <div class="container">
+          <a class="navbar-brand" href="#home"><img src="https://i.ibb.co/Rb6yXLg/Voyagee-removebg-preview.png" style="width: 160px; height: 80px;" href="#home"> </a> 
+          <button aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarNavDropdown" data-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link page-scroll" href="#terbaru">Terbaru</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link page-scroll" href="#terpopuler">Terpopuler</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#kategori" id="navbarDropdown" role="button" data-toggle="kategori" aria-haspopup="true" aria-expanded="false">
+                Kategori
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link page-scroll" href="#galeri">Galeri</a>
+            </li>
+            </ul>
+          </div>
+        </div>
+      </nav><!-- Akhir Navbar -->
+
+      <div id="slide" class="carousel slide" data-ride="carousel">
+        <ul class="carousel-indicators">
+          <li data-target="#slide" data-slide-to="0" class="active"></li>
+          <li data-target="#slide" data-slide-to="1"></li>
+          <li data-target="#slide" data-slide-to="2"></li>
+        </ul>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
           <img src="img/1.png" class="d-block w-100" alt="Slide- 1">
           <div class="carousel-caption d-none d-md-block">
             <h5>Yogyakarta</h5>
@@ -63,49 +68,160 @@
             <p>Wisata kawah disekitaran bandung.</p>
           </div>
         </div>
-      </div>
-      <a class="carousel-control-prev" href="#slide" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#slide" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div>
-  
- <section class="konten mt-5" id="konten">
-    <div class="container">
-     </div><!-- Baris Cart 1 -->
-     <div class="row mb-4">
-      <div class="col-md mb-3">
-       <!-- Cart 1 -->
-       <div class="card" style="width: 18rem;">
-        <a class="text-dark" href="#"><img class="card-img-top" src="img/1.png">
-        <div class="card-body">
-         <p class="card-text">Yogyakarta.</p>
-        </div></a>
-       </div>
-      </div><!-- Cart 2 -->
-      <div class="col-md mb-3">
-       <div class="card" style="width: 18rem;">
-        <a class="text-dark" href="#"><img class="card-img-top" src="img/2.png">
-        <div class="card-body">
-         <p class="card-text">Bali</p>
-        </div></a>
-       </div>
-      </div><!-- Cart 3 -->
-      <div class="col-md mb-3">
-       <div class="card" style="width: 18rem;">
-        <a class="text-dark" href="#"><img class="card-img-top" src="img/3.png">
-        <div class="card-body">
-         <p class="card-text">Bandung.</p>
-        </div></a>
-       </div>
-      </div>
-     </div>
-    </div>
-   </section>
+        </div>
 
-</body>
-</html>
+        <a class="carousel-control-prev" href="#slide" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#slide" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+      
+      <div class="content text-center">
+        <h1>Cuaca</h1>
+        <h1>12 Oktober 2020</h1>
+      </div>
+        
+      <section class="cuaca mt-5" id="cuaca">
+        <div class="container">
+          <div class="row mb-4">
+            <div class="col-md mb-3">
+              <div class="card" style="width: 18rem;">
+                <a class="text-dark" href="#"><img class="card-img-top" src="img/1.png">
+                  <div class="card-body">
+                    <p class="card-text">Yogyakarta.</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-md mb-3">
+              <div class="card" style="width: 18rem;">
+                <a class="text-dark" href="#"><img class="card-img-top" src="img/2.png">
+                  <div class="card-body">
+                    <p class="card-text">Bali</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-md mb-3">
+              <div class="card" style="width: 18rem;">
+                <a class="text-dark" href="#"><img class="card-img-top" src="img/3.png">
+                  <div class="card-body">
+                    <p class="card-text">Bandung.</p>
+                  </div>
+                </a>
+              </div>
+            </div>   
+          </div>
+        </div>
+      </section>
+      
+      <div class="content text-center">
+        <h1>Destinasi Pilihan</h1>
+      </div>
+      
+      <div class="container">
+        <div class="row text-center text-lg-left">
+          <div class="col-lg-3 col-md-4 col-xs-6">
+            <a href="#" class="d-block mb-4 h-100">
+              <img class="img-fluid img-thumbnail" src="img/1.png" alt="">
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-4 col-xs-6">
+            <a href="#" class="d-block mb-4 h-100">
+              <img class="img-fluid img-thumbnail" src="img/1.png" alt="">
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-4 col-xs-6">
+            <a href="#" class="d-block mb-4 h-100">
+              <img class="img-fluid img-thumbnail" src="img/1.png" alt="">
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-4 col-xs-6">
+            <a href="#" class="d-block mb-4 h-100">
+              <img class="img-fluid img-thumbnail" src="img/1.png" alt="">
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-4 col-xs-6">
+            <a href="#" class="d-block mb-4 h-100">
+              <img class="img-fluid img-thumbnail" src="img/2.png" alt="">
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-4 col-xs-6">
+            <a href="#" class="d-block mb-4 h-100">
+              <img class="img-fluid img-thumbnail" src="img/2.png" alt="">
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-4 col-xs-6">
+            <a href="#" class="d-block mb-4 h-100">
+              <img class="img-fluid img-thumbnail" src="img/2.png" alt="">
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-4 col-xs-6">
+            <a href="#" class="d-block mb-4 h-100">
+              <img class="img-fluid img-thumbnail" src="img/2.png" alt="">
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="content text-center">
+        <span class="border border-primary rounded-pill" style="background-color: #abcabd;">Lihat Destinasi Lainnya</span>
+      </div>
+      
+      <div class="content text-center">
+        <h1>Artikel Baru</h1>
+      </div>
+
+      <section class="cuaca mt-5" id="cuaca">
+        <div class="container">
+          <div class="row mb-4">
+            <div class="col-md mb-3">
+              <div class="card" style="width: 18rem;">
+                <a class="text-dark" href="#"><img class="card-img-top" src="img/1.png">
+                  <div class="card-body">
+                    <p class="card-text">Yogyakarta.</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-md mb-3">
+              <div class="card" style="width: 18rem;">
+                <a class="text-dark" href="#"><img class="card-img-top" src="img/2.png">
+                  <div class="card-body">
+                    <p class="card-text">Bali</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-md mb-3">
+              <div class="card" style="width: 18rem;">
+                <a class="text-dark" href="#"><img class="card-img-top" src="img/3.png">
+                  <div class="card-body">
+                    <p class="card-text">Bandung.</p>
+                  </div>
+                </a>
+              </div>
+            </div>   
+          </div>
+        </div>
+      </section>
+
+      <div class="content text-center">
+        <span class="border border-primary rounded-pill" style="background-color: #abcabd;">Lihat Semua Artikel</span>
+      </div>
+
+      <footer class="text-dark mt-5" style="background-color: #abcabd;">
+        <div class="container">
+         <div class="row">
+          <div class="col text-center pt-3">
+           <p>&copy; 2020 by Voyagee</p>
+          </div>
+         </div>
+        </div>
+       </footer>
+  
+    </body>
+  </html>
