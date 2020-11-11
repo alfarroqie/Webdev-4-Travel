@@ -18,6 +18,9 @@ module.exports = app => {
   
     // Delete a Categorys with id
     router.delete("/:id", categorys.delete);
+
+    // Create news category
+    router.post("/newsCategory", categorys.addNewsCategory);
   
     app.use('/api/categorys', router);
   };

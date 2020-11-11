@@ -1,5 +1,7 @@
 const db = require("../models");
 const Categorys = db.categorys;
+const NewsCategory = db.newsCategory;
+const News = db.news;
 const Op = db.Sequelize.Op;
 
 // Create and Save a new Categorys
@@ -128,3 +130,49 @@ exports.findAll = (req, res) => {
 };
 
 
+// exports.addNewsCategory = (req, res) => {
+//   if (!req.body.newsId || !req.body.categorysId) {
+//     res.status(400).send({
+//       message: "newsId and categorysId cannot empty!"
+//     });
+//     return;
+//   }
+//   return Categorys.findByPk(req.body.categorysId)
+//     .then((categorys) => {
+//       if (!categorys) {
+//         console.log("Category not found");
+//         return null;
+//       }
+//       return News.findByPk(req.body.newsId).then((news) => {
+//         if (!news) {
+//           console.log("News not found!");
+//           return null;
+//         }
+
+// exports.addNewsCategory = (req, res) => {
+//   // Validate request
+// if (!req.body.newsId || !req.body.categorysId) {
+//   res.status(400).send({
+//     message: "newsId dan categorysId cannot be empty!"
+//   });
+//   return;
+// }
+
+// // Create a Categorys
+// const newscategory = {
+//   news_id: req.body.newsId,
+//   category_id: req.body.isLocation
+// };
+
+// // Save Categorys in the database
+// Categorys.create(categorys)
+//   .then(data => {
+//     res.send(data);
+//   })
+//   .catch(err => {
+//     res.status(500).send({
+//       message:
+//         err.message || "Some error occurred while creating the Categorys."
+//     });
+//   });
+// };

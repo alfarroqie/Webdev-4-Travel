@@ -43,16 +43,17 @@ db.news.belongsToMany(db.categorys, {
 // one to many user and news 
 db.users.hasMany(db.news, { as: "postNews" });
 db.news.belongsTo(db.users, {
-  foreignKey: "userPostId",
-  as: "userPost",
+  foreignKey: "userId",
+  as: "Post",
 });
 
 // // one to many roles and user
-// db.roles.hasMany(db.users, { as: "userRoles" });
-// db.users.belongsTo(db.roles, {
-//   foreignKey: "userRolesId",
-//   as: "userRoles",
-// });
+db.roles.hasMany(db.users, { as: "userRoles" });
+db.users.belongsTo(db.roles, {
+  foreignKey: "roleId",
+  as: "userRoles",
+});
+
 module.exports = db;
 
 

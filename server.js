@@ -30,6 +30,7 @@ require("./app/routes/weathers.routes")(app);
 require("./app/routes/news.routes")(app);
 require("./app/routes/categorys.routes")(app);
 require("./app/routes/users.routes")(app);
+require("./app/routes/roles.routes")(app);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8082;

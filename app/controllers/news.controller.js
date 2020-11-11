@@ -1,3 +1,4 @@
+const { categorys } = require("../models");
 const db = require("../models");
 const News = db.news;
 const Op = db.Sequelize.Op;
@@ -114,3 +115,20 @@ exports.delete = (req, res) => {
       });
     });
 };
+
+// GET 5 berita populer landing page
+// exports.findAll = (req, res) => {
+//   const category = req.query.category;
+//   var condition = category ? { category: { [Op.iLike]: `%${category}%` } } : null;
+
+//   Tutorial.findAll({ where: condition })
+//     .then(data => {
+//       res.send(data);
+//     })
+//     .catch(err => {
+//       res.status(500).send({
+//         message:
+//           err.message || "Some error occurred while retrieving tutorials."
+//       });
+//     });
+// };
