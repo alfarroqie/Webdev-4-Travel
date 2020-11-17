@@ -23,7 +23,7 @@ db.sequelize = sequelize;
 db.news = require("./news.model.js")(sequelize, Sequelize);
 db.categorys = require("./categorys.model.js")(sequelize, Sequelize);
 db.gallerys = require("./gallerys.model.js")(sequelize, Sequelize);
-db.roles = require("./roles.model.js")(sequelize, Sequelize);
+// db.roles = require("./roles.model.js")(sequelize, Sequelize);
 db.users = require("./users.model.js")(sequelize, Sequelize);
 db.weathers = require("./weathers.model.js")(sequelize, Sequelize);
 
@@ -46,13 +46,6 @@ db.users.hasMany(db.news, { as: "postNews" });
 db.news.belongsTo(db.users, {
   foreignKey: "userId",
   as: "Post",
-});
-
-// // one to many roles and user
-db.roles.hasMany(db.users, { as: "userRoles" });
-db.users.belongsTo(db.roles, {
-  foreignKey: "roleId",
-  as: "userRoles",
 });
 
 module.exports = db;
