@@ -31,22 +31,15 @@ db.weathers = require("./weathers.model.js")(sequelize, Sequelize);
 //define relation
 //many to many news and category
 db.categorys.belongsToMany(db.news, {
-  through: "newsCategory",
-  as: "news",
-  foreignKey: "news_id",
+  through: "newsCategory"
 });
 db.news.belongsToMany(db.categorys, {
-  through: "newsCategory",
-  as: "category",
-  foreignKey: "category_id",
+  through: "newsCategory"
 });
 
 // one to many user and news 
-db.users.hasMany(db.news, { as: "postNews" });
-db.news.belongsTo(db.users, {
-  foreignKey: "userId",
-  as: "Post",
-});
+db.users.hasMany(db.news);
+db.news.belongsTo(db.users);
 
 module.exports = db;
 

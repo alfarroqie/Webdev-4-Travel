@@ -1,6 +1,7 @@
 const { categorys } = require("../models");
 const db = require("../models");
 const News = db.news;
+const Categorys = db.categorys;
 const Op = db.Sequelize.Op;
 
 // Create and Save a new News
@@ -116,6 +117,53 @@ exports.delete = (req, res) => {
     });
 };
 
+exports.getNewsWithCategory = (req,res) => {
+    News.findAll({ include: Categorys})
+    .then(data => {
+      res.send(data);
+    })
+    .catch(err => {
+      res.status(500).send({
+        message:
+          err.message || "Some error while retrieve news with category"
+      });
+    });
+}
+
+// exports.addNewsCategory = async (req,res) => {
+//   const news = News.findByPk(req.body.newsId);
+//   const category = Categorys.findByPk(req.body.categoryId);
+
+//   await news.addCategorys(category,{ through: { selfGranted: false } })
+//   .then
+// }
+
+exports.addNewsCategory = (req, res) => {
+  return News.findByPk(req.body.newsId)
+    .then((news) => {
+      if (!news) {
+        console.log("News not found");
+        return null;
+      }
+      return Categorys.findByPk(req.body.categoryId).then((categorys) => {
+        if (!categorys) {
+          console.log("Category not found");
+          return null;
+        }
+
+        news.addCategory(categorys);
+        res.send(news);
+      });
+
+    })
+    .catch((err) => {
+      console.log(">> Error while add news category: ", err);
+    });
+};
+
+
+
+// }
 // GET 5 berita populer landing page
 // exports.findAll = (req, res) => {
 //   const category = req.query.category;
