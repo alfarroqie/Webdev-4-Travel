@@ -165,7 +165,18 @@ exports.addNewsCategory = (req, res) => {
 };
 
 
-
+exports.getNewsWithCategory = (req,res) => {
+  News.findAll({ include: Categorys})
+  .then(data => {
+    res.send(data);
+  })
+  .catch(err => {
+    res.status(500).send({
+      message:
+        err.message || "Some error while retrieve news with category"
+    });
+  });
+}
 
 // Get Newest News
 exports.getNewestNews = (req, res) => {

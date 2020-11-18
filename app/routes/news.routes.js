@@ -20,10 +20,16 @@ module.exports = app => {
     router.delete("/:id", news.delete);
 
     //Get News with category
-    router.get("/category", news.getNewsWithCategory);
+     router.get("/category", news.getNewsWithCategory);
 
     //add category
     router.post("/category", news.addNewsCategory);
+
+    // get newest news
+    router.get("/newest", news.getNewestNews);
+
+    //get 3 newest news
+    router.get("/newestThree", news.findNewest);
   
     app.use('/api/news', router);
   };
