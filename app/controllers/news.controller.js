@@ -164,8 +164,7 @@ exports.getNewsWithCategory = (req,res) => {
 
 // Get Newest News
 exports.getNewestNews = (req, res) => {
-  const id = "SELECT * FROM news ORDER BY createdAt";
-  News.findAll(id)
+  News.findAll({order: [['createdAt', 'ASC']]})
     .then(data => {
       res.send(data);
     })
@@ -179,9 +178,7 @@ exports.getNewestNews = (req, res) => {
 
 //GET 3 berita terbaru
 exports.findNewest = (req, res) => {
-  const id = "SELECT * FROM news ORDER BY createdAt LIMIT 3";
-
-  News.findNewest(id)
+  News.findAll({where:{order: [['createdAt', 'ASC']]},limit:3})
     .then(data => {
       res.send(data);
     })
