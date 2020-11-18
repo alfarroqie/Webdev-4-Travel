@@ -116,6 +116,22 @@ exports.delete = (req, res) => {
     });
 };
 
+// GET 3 berita Terbaru
+exports.findNewest = (req, res) => {
+  const id = "SELECT * FROM news ORDER BY createdAt LIMIT 3";
+
+  Newst.findNewest(id)
+    .then(data => {
+      res.send(data);
+    })
+    .catch(err => {
+      res.status(500).send({
+        message:
+          err.message || "Some error occurred while retrieving News."
+      });
+    });
+};
+
 // GET 5 berita populer landing page
 // exports.findAll = (req, res) => {
 //   const category = req.query.category;
