@@ -28,8 +28,8 @@ module.exports = app => {
     // get newest news
     router.get("/newest", news.getNewestNews);
 
-    //get 3 newest news
-    router.get("/newestThree", news.findNewest);
+    // Retrieve 3 Newest News
+    router.get("/newestNews", news.findNewest);
   
     app.use('/api/news', router);
   };
