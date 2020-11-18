@@ -117,8 +117,10 @@ exports.delete = (req, res) => {
     });
 };
 
-exports.getNewsWithCategory = (req,res) => {
-    News.findAll({ include: Categorys})
+exports.findNewest = (req, res) => {
+  const id = "SELECT * FROM news ORDER BY createdAt LIMIT 3";
+
+  News.findNewest(id)
     .then(data => {
       res.send(data);
     })
@@ -129,6 +131,7 @@ exports.getNewsWithCategory = (req,res) => {
       });
     });
 }
+
 
 // exports.addNewsCategory = async (req,res) => {
 //   const news = News.findByPk(req.body.newsId);
@@ -163,7 +166,22 @@ exports.addNewsCategory = (req, res) => {
 
 
 
-// }
+
+// Get Newest News
+exports.getNewestNews = (req, res) => {
+  const id = "SELECT * FROM news ORDER BY createdAt";
+  News.findAll(id)
+    .then(data => {
+      res.send(data);
+    })
+    .catch(err => {
+      res.status(500).send({
+        message:
+          err.message || "Some error occurred while retrieving News."
+      });
+    });
+};
+
 // GET 5 berita populer landing page
 // exports.findAll = (req, res) => {
 //   const category = req.query.category;
