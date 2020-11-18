@@ -11,7 +11,7 @@ module.exports = app => {
     router.get("/", news.findAll);
     
     // Retrieve 3 Newest News
-    router.get("/News", news.findNewest);
+    router.get("/news", news.findNewest);
   
     // Retrieve a single News with id
     router.get("/:id", news.findOne);
@@ -22,7 +22,7 @@ module.exports = app => {
     // Delete a News with id
     router.delete("/:id", news.delete);
     
-    router.get("/NewestNews", news.getNewestNews);
+    router.get("/newestNews", news.getNewestNews);
   
     app.use('/api/news', router);
   };
