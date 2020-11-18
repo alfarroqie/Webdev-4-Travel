@@ -116,11 +116,11 @@ exports.delete = (req, res) => {
     });
 };
 
-// GET 3 berita Terbaru
+// GET 3 Newest News
 exports.findNewest = (req, res) => {
   const id = "SELECT * FROM news ORDER BY createdAt LIMIT 3";
 
-  Newst.findNewest(id)
+  News.findNewest(id)
     .then(data => {
       res.send(data);
     })
@@ -128,6 +128,21 @@ exports.findNewest = (req, res) => {
       res.status(500).send({
         message:
           err.message || "Some error occurred while retrieving News."
+      });
+    });
+};
+
+// Get Newest News
+exports.getNewestNews = (req, res) => {
+  const id = "SELECT * FROM news ORDER BY createdAt";
+  News.findAll(id)
+    .then(data => {
+      res.send(data);
+    })
+    .catch(err => {
+      res.status(500).send({
+        message:
+          err.message || "Some error occurred while retrieving tutorials."
       });
     });
 };
