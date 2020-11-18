@@ -1,0 +1,54 @@
+h1 {
+    padding-top: 150px;
+    padding-bottom: 30px;
+}
+
+.card {
+    margin-bottom: 20px;
+}
+
+.card-horizontal {
+    display: flex;
+    flex: 1 1 auto;
+}
+
+.fas {
+    color: #CDE5DD;
+    font-size: 20px;
+    padding-top: 0px;
+    padding-left: 5px;
+}
+
+.login {
+    margin-bottom: 5px;
+}
+p.keterangan-gambar{
+	 color: #717171;
+	 padding-left : 50px;
+	 padding-bottom: 10px;
+}
+.kolom-komentar{
+	padding-top: 20px;
+	color: #717171;
+}
+
+.kolom-komentar buttonwrapper{
+ display:inline-block;
+}
+@media all and (min-width: 992px) {
+    .navbar .nav-item .dropdown-menu {
+        display: none;
+    }
+
+    .navbar .nav-item:hover .nav-link {
+        color: #fff;
+    }
+
+    .navbar .nav-item:hover .dropdown-menu {
+        display: block;
+    }
+
+    .navbar .nav-item .dropdown-menu {
+        margin-top: 0;
+    }
+}
