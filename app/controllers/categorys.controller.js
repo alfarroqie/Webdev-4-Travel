@@ -111,12 +111,27 @@ exports.delete = (req, res) => {
     });
 };
 
-// GET All Categorys with Location
-exports.findAll = (req, res) => {
-  const location = req.query.location;
-  var condition = location ? { location: { [Op.iLike]: `%${location}%` } } : null;
+// // GET All Categorys with query location
+// exports.findAll = (req, res) => {
+//   // const location = req.query.location;
+//   // var condition = location ? { location: { [Op.iLike]: `%${location}%` } } : null;
+//    const isLocation = req.query.isLocation;
+//    var condition = isLocation ? { isLocation: { [Op.eq]: isLocation } } : null;
 
-  Categorys.findAll({ where: condition })
+//   Categorys.findAll({ where: condition })
+//     .then(data => {
+//       res.send(data);
+//     })
+//     .catch(err => {
+//       res.status(500).send({
+//         message:
+//           err.message || "Some error occurred while retrieving tutorials."
+//       });
+//     });
+// };
+// Get Location Category
+exports.getLocationCategory = (req, res) => {
+  Categorys.findAll({ where: { isLocation: true } })
     .then(data => {
       res.send(data);
     })
@@ -127,7 +142,18 @@ exports.findAll = (req, res) => {
       });
     });
 };
-
+exports.getCulinaryCategory = (req, res) => {
+  Categorys.findAll({ where: { name: {[Op.like]: 'kuliner'} } })
+    .then(data => {
+      res.send(data);
+    })
+    .catch(err => {
+      res.status(500).send({
+        message:
+          err.message || "Some error occurred while retrieving tutorials."
+      });
+    });
+};
 // Adding News Category
 // exports.addNewsCategory = (req, res) => {
 //     // Validate request
