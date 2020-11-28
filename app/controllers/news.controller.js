@@ -117,14 +117,6 @@ exports.delete = (req, res) => {
     });
 };
 
-// exports.addNewsCategory = async (req,res) => {
-//   const news = News.findByPk(req.body.newsId);
-//   const category = Categorys.findByPk(req.body.categoryId);
-
-//   await news.addCategorys(category,{ through: { selfGranted: false } })
-//   .then
-// }
-
 exports.addNewsCategory = (req, res) => {
   return News.findByPk(req.body.newsId)
     .then((news) => {
@@ -147,20 +139,6 @@ exports.addNewsCategory = (req, res) => {
       console.log(">> Error while add news category: ", err);
     });
 };
-
-
-exports.getNewsWithCategory = (req,res) => {
-  News.findAll({ include: Categorys})
-  .then(data => {
-    res.send(data);
-  })
-  .catch(err => {
-    res.status(500).send({
-      message:
-        err.message || "Some error while retrieve news with category"
-    });
-  });
-}
 
 // Get Newest News
 exports.getNewestNews = (req, res) => {
@@ -190,19 +168,48 @@ exports.findNewest = (req, res) => {
     });
 }
 
-// GET 5 berita populer landing page
-// exports.findAll = (req, res) => {
-//   const category = req.query.category;
-//   var condition = category ? { category: { [Op.iLike]: `%${category}%` } } : null;
-
-//   Tutorial.findAll({ where: condition })
-//     .then(data => {
-//       res.send(data);
-//     })
-//     .catch(err => {
-//       res.status(500).send({
-//         message:
-//           err.message || "Some error occurred while retrieving tutorials."
-//       });
-//     });
-// };
+//get news with category
+exports.getNewsandCategory = (req,res) => {
+  return News.findAll({
+    include: [
+      {
+        model: Categorys,
+        as: "categories",
+        attributes: ["id", "name"],
+        through: {
+          attributes: [],
+        },
+      },
+    ],
+  })
+    .then((data) => {
+      res.status(500).send(data);
+    })
+    .catch((err) => {
+      console.log(">> Error while retrieving news: ", err);
+    });
+};
+exports.getNewsWithCategoryName = (req,res) => {
+  const name = req.params.name;
+  return News.findAll({
+    include: [
+      {
+        model: Categorys,
+        as: "categories",
+        attributes: ["id", "name"],
+        through: {
+          attributes: [],
+        },
+        where: {
+          name: { [Op.iLike] : name }
+        }
+      },
+    ],
+  })
+    .then((data) => {
+      res.status(500).send(data);
+    })
+    .catch((err) => {
+      console.log(">> Error while retrieving news: ", err);
+    });
+};

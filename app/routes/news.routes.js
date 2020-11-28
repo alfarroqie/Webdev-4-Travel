@@ -19,9 +19,6 @@ module.exports = app => {
     // Delete a News with id
     router.delete("/:id", news.delete);
 
-    //Get News with category
-     router.get("/category", news.getNewsWithCategory);
-
     //add category
     router.post("/category", news.addNewsCategory);
 
@@ -30,6 +27,13 @@ module.exports = app => {
 
     // Retrieve 3 Newest News
     router.get("/newestNews", news.findNewest);
+
+    //get news and category
+    router.get("/newsCategory", news.getNewsandCategory);
+
+    //Get news yogyakarta category
+    router.get("/newsCategory/:name", news.getNewsWithCategoryName);
+    
   
     app.use('/api/news', router);
   };
