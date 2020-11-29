@@ -67,8 +67,8 @@ exports.findOne = (req, res) => {
     });
 };
 //Retrieve all News from the database or by search.
-exports.findAll= (req, res) => {
-  const title = req.query.title;
+exports.findBySearch= (req, res) => {
+  const title = req.params.title;
   var condition = title ? { title: { [Op.iLike]: `%${title}%` } } : null;
 
   News.findAll({ where: condition })
