@@ -131,4 +131,16 @@ exports.findAll = (req, res) => {
     });
 };
 
-
+//get 5 newest weather
+exports.findNewest = (req, res) => {
+  Weather.findAll({where:{order: [['createdAt', 'ASC']]},limit:5})
+    .then(data => {
+      res.send(data);
+    })
+    .catch(err => {
+      res.status(500).send({
+        message:
+          err.message || "Some error while retrieve news with category"
+      });
+    });
+}
