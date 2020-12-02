@@ -40,7 +40,7 @@
               <router-link to="/news" class="nav-link">Terbaru</router-link>
             </li>
             <li class="nav-item">
-              <router-link to="/news" class="nav-link">Terpopuler</router-link>
+              <router-link to="/cms" class="nav-link">Terpopuler</router-link>
             </li>
             <li class="nav-item dropdown">
               <a
@@ -59,7 +59,7 @@
             <li class="nav-item">
               <router-link to="/news" class="nav-link">Galeri</router-link>
             </li>
-            <li class="nav-item:hover dropdown" style="display: block">
+            <li class="nav-item dropdown" style="display: block">
               <a
                 class="nav-link dropdown-toggle"
                 href="#"
@@ -112,6 +112,19 @@
     <div class="container mt-3">
       <router-view />
     </div>
+
+    <!-- Footer -->
+    <footer class="footer text-white mt-5" style="background-color: #aac9c0">
+      <div class="container">
+        <div class="row">
+          <div class="col text-center pt-3">
+            <p>Made with tears by Kelompok 4 &copy; 2020 Voyagee</p>
+            <i class="fas fa-poo"></i>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Akhir Footer -->
   </div>
 </template>
 
@@ -131,6 +144,13 @@ export default {
 
 .login {
   margin-bottom: 5px;
+}
+
+.footer {
+  position: fixed;
+  margin-top: 100px;
+  bottom: 0px;
+  width: 100%;
 }
 
 @media all and (min-width: 992px) {

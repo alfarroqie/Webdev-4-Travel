@@ -18,6 +18,11 @@ export default new Router({
         component: () => import("./components/News")
         },
         // {
+        //     path: "/news/cms",
+        //     name: "cms",
+        //     component: () => import("./components/CMS")
+        // }
+        // {
         // path: "/add",
         // name: "add",
         // component: () => import("./components/AddTutorial")

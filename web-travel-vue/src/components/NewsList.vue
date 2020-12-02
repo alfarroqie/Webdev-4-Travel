@@ -1,6 +1,6 @@
 <template>
   <div class="list row">
-    <div class="col-md-8">
+    <div class="col-md-12">
       <div class="input-group mb-3">
         <input
           type="text"
@@ -19,25 +19,43 @@
         </div>
       </div>
     </div>
-    <div class="col-md-6">
-      <h4>News List</h4>
+    <div class="col-md-12">
+      <h1>Artikel Terbaru</h1>
       <ul class="list-group">
-        <li
+        <!-- <li
           class="list-group-item"
           :class="{ active: index == currentIndex }"
           v-for="(thisNews, index) in news"
           :key="index"
           @click="setActiveNews(thisNews, index)"
+        > -->
+        <li
+          class="list-group-item"
+          :class="{ active: index == currentIndex }"
+          v-for="(thisNews, index) in news"
+          :key="index"
         >
-          {{ thisNews.title }}
+          <div class="card">
+            <div class="card-horizontal">
+              <div class="img-square-wrapper">
+                <img class="" :src="thisNews.pictLink" alt="Card image cap" />
+              </div>
+              <div class="card-body">
+                <h4 class="card-title">{{ thisNews.title }}</h4>
+                <p class="card-text">
+                  {{ thisNews.content }}
+                </p>
+              </div>
+            </div>
+          </div>
         </li>
       </ul>
 
-      <button class="m-3 btn btn-sm btn-danger" @click="removeAllNews">
+      <!-- <button class="m-3 btn btn-sm btn-danger" @click="removeAllNews">
         Remove All
-      </button>
+      </button> -->
     </div>
-    <div class="col-md-6">
+    <!-- <div class="col-md-6">
       <div v-if="currentNews">
         <h4>News</h4>
         <div>
@@ -56,7 +74,7 @@
         <br />
         <p>Please click on a Tutorial...</p>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -125,9 +143,19 @@ export default {
 </script>
 
 <style>
+h1 {
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
 .list {
   text-align: left;
-  max-width: 750px;
-  margin: auto;
+  margin: 120px auto;
+}
+
+.card-horizontal {
+  display: flex;
+  flex: 1 1 auto;
 }
 </style>
