@@ -6,7 +6,7 @@ class NewsDataService {
     }
 
     get(id) {
-        return http.get(`/news/${id}`);
+        return http.get(`/news/id/${id}`);
     }
 
     create(data) {
@@ -14,7 +14,7 @@ class NewsDataService {
     }
 
     update(id, data) {
-        return http.put(`/news/${id}`, data);
+        return http.put(`/news/id/${id}`, data);
     }
 
     delete(id) {
@@ -22,11 +22,11 @@ class NewsDataService {
     }
 
     deleteAll() {
-        return http.delete(`/mews`);
+        return http.delete(`/news`);
     }
 
     findByTitle(title) {
-        return http.get(`/news?title=${title}`);
+        return http.get(`/news//${title}`);
     }
 }
 

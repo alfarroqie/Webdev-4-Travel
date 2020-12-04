@@ -13,9 +13,9 @@ export default new Router({
         component: () => import("./components/NewsList")
         },
         {
-        path: "/news/:id",
+        path: "/news/id/:id",
         name: "news-details",
-        component: () => import("./components/News")
+        component: () => import("./components/NewsDetail")
         },
         // {
         //     path: "/news/cms",

@@ -51,9 +51,8 @@
                 Kategori
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#"> Kategori 1</a></li>
-                <li><a class="dropdown-item" href="#"> Kategori 2 </a></li>
-                <li><a class="dropdown-item" href="#"> Kategori 3 </a></li>
+                <li><a class="dropdown-item" href="#"> Kuliner</a></li>
+                <li><a class="dropdown-item" href="#"> Tips</a></li>
               </ul>
             </li>
             <li class="nav-item">
@@ -119,7 +118,6 @@
         <div class="row">
           <div class="col text-center pt-3">
             <p>Made with tears by Kelompok 4 &copy; 2020 Voyagee</p>
-            <i class="fas fa-poo"></i>
           </div>
         </div>
       </div>

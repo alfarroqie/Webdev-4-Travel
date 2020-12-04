@@ -38,13 +38,14 @@
           <div class="card">
             <div class="card-horizontal">
               <div class="img-square-wrapper">
-                <img class="" :src="thisNews.pictLink" alt="Card image cap" />
+                <img class="" :src="'../assets/' + thisNews.pictLink" alt="Image Card" />
               </div>
               <div class="card-body">
-                <h4 class="card-title">{{ thisNews.title }}</h4>
-                <p class="card-text">
+                <router-link :to="'/news/id/' + thisNews.id"> <h4 class="card-title">{{ thisNews.title }}</h4> </router-link>
+                <!-- <p class="card-text">
                   {{ thisNews.content }}
                 </p>
+                -->
               </div>
             </div>
           </div>
